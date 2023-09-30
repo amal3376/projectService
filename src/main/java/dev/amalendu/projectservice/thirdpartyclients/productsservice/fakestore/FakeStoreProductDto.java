@@ -1,4 +1,4 @@
-package dev.amalendu.projectservice.dtos;
+package dev.amalendu.projectservice.thirdpartyclients.productsservice.fakestore;
 
 import dev.amalendu.projectservice.models.Category;
 import lombok.Getter;
