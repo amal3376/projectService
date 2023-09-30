@@ -33,11 +33,17 @@ public class FakeStoreProductServiceClient {
     @Value("${fakestore.api.paths.product}")
     private String fakeStoreProductApiPath;
 
-    private String specificProductRequestUrl = fakeStoreApiUrl +fakeStoreProductApiPath +"/{id}";
-    private String productRequestsBaseUrl = fakeStoreApiUrl +fakeStoreProductApiPath;
+    private String specificProductRequestUrl ;
+    private String productRequestsBaseUrl ;
 
-    public FakeStoreProductServiceClient(RestTemplateBuilder restTemplateBuilder){
+    public FakeStoreProductServiceClient(
+            RestTemplateBuilder restTemplateBuilder,
+            @Value("${fakestore.api.url}") String fakeStoreApiUrl,
+            @Value("${fakestore.api.paths.product}") String fakeStoreProductApiPath
+    ){
         this.restTemplateBuilder = restTemplateBuilder;
+        this.productRequestsBaseUrl = fakeStoreApiUrl+fakeStoreProductApiPath;
+        this.specificProductRequestUrl= fakeStoreApiUrl+fakeStoreProductApiPath +"/{id}";
     }
 
 //    @Override
