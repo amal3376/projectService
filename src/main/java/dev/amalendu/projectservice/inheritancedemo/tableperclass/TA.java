@@ -1,4 +1,4 @@
-package dev.amalendu.projectservice.inheritancedemo.singletable;
+package dev.amalendu.projectservice.inheritancedemo.tableperclass;
 
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
@@ -7,8 +7,9 @@ import lombok.Setter;
 
 @Getter
 @Setter
-@Entity(name = "st_mentor")
-@DiscriminatorValue(value = "3")
-public class Mentor extends User {
+@Entity(name = "tpc_ta")
+public class TA extends User {
+
     private double averageRating;
+
 }
